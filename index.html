@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Gabriel Andrade</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script src="script.js"></script>
+</head>
+<body>
+
+    <div class="app-container">
+
+        
+        <aside class="sidebar">
+            <nav class="nav-principal">
+                <div class="menu-item active">
+                    <span class="icon"><img src="home.png" alt=""></span>
+                    <a href="#">Home</a>
+                </div>
+                <div class="menu-item">
+                    <span class="icon"><img src="lupa 1.png" alt=""></span>
+                    <a href="#">Search</a>
+                </div>
+                <div class="menu-item">
+                    <span class="icon"><img src="biblioteca.png" alt=""></span>
+                    <a href="#">Your Library</a>
+                </div>
+            </nav>
+
+            <div class="playlists-sec">
+                <span class="sec-label">Playlists</span>
+                <div class="menu-item">
+                    <span class="icon-box">+</span>
+                    <a href="#">Create Playlist</a>
+                </div>
+                <div class="menu-item">
+                    <span class="icon-box liked"><img src="image 1.png" alt=""></span>
+                    <a href="#">Liked Songs</a>
+                </div>
+            </div>
+
+            <div class="sidebar-divider"></div>
+
+            <div class="projects-sec">
+                <h3>Projects</h3>
+                <p>• Nenhum</p>
+            </div>
+        </aside>
+
+        
+        <div class="main-wrapper">
+            
+            
+            <header class="navbar">
+                <div class="nav-arrows">
+                    <button class="arrow-btn" aria-label="Voltar">‹</button>
+                    <button class="arrow-btn" aria-label="Avançar">›</button>
+                </div>
+
+                <div class="nav-filters">
+                    <button class="filter-btn active">Playlists</button>
+                    <button class="filter-btn">Podcasts</button>
+                    <button class="filter-btn">Artists</button>
+                    <button class="filter-btn">Albums</button>
+                </div>
+
+                 <div class="user-profile">
+                    <button onclick="aparece()"><img src="eu.png " alt="Gabriel Andrade" class="avatar">
+                    <span>Gabriel Andrade</span>
+                    <span class="arrow-down">▼</span></button>
+                    <div id="aparecer" class="aparecer"><img src="euu.jpg" alt=""><h1>Gabriel Andrade</h1>Eu vim ao mundo em 14 de maio de 2008, em Belo Horizonte, MG, e cresci cercado de tecnologia, o que me proporciona algumas facilidades na área de computação. Meu pai teve uma grande influência para que eu começasse a estudar mais sobre sua área de atuação. Atualmente, ele mesmo está me dando aulas semanais sobre COBOL, para que, quem sabe um dia, eu possa trabalhar em sua área.</div>
+                </div>
+
+            </header>
+
+            
+            <div class="content-header">
+                <h1>Playlists</h1>
+                <div class="recently-played">
+                    <img src="lupa 2.png" alt=""> Recently played <span>▼</span>
+                </div>
+            </div>
+
+            
+            <main class="cards-grid">
+                
+                
+                <div class="col-left">
+                    <div class="card card-purple">
+                        <h2>Sobre mim</h2>
+                        <p>
+                            Meu nome é Gabriel, sou estudante do segundo ano da Cotemig, onde curso ensino médio e curso técnico em informática.<br><br>
+                            Atualmente estou estudando COBOL, CSS, HTML, C#, JAVASCRIPT e MYSQL.
+                        </p>
+                    </div>
+
+                    <div class="card card-green">
+<h2>Entre em Contato</h2>
+
+
+<form action="/api/contato" method="POST">
+    
+    
+    <input type="text" name="nome" placeholder="Nome:" required>
+    
+    <input type="email" name="email" placeholder="Email:" required>
+    
+    <textarea name="mensagem" placeholder="Digite sua mensagem:" required></textarea>
+    
+    
+    <button class="envidar">Enviar</button>
+</form>
+                    </div>
+                </div>
+
+                
+                <div class="card card-dark">
+                    <div class="card-img-wrapper">
+                        <img src="album1.png" alt="Radiohead Creep" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=500&auto=format&fit=crop&q=80'">
+                    </div>
+                    <h3>Experiência profissional</h3>
+                    <p class="subtext">Nenhuma</p>
+                </div>
+
+                
+                <div class="card card-dark">
+                    <div class="card-img-wrapper">
+                        <img src="album2.png" alt="OK Computer" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop&q=80'">
+                    </div>
+                    <h3>Línguas faladas</h3>
+                    <p class="subtext">Português, Inglês (intermediário) e Espanhol (intermediário)</p>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    
+    <footer class="player-bar">
+        <div class="player-track">
+            <img src="creep.png" alt="Capa" class="track-thumb" onerror="this.src='https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=100&auto=format&fit=crop&q=80'">
+            <div class="track-info">
+                <strong>Creep</strong>
+                <span>Radiohead</span>
+            </div>
+            <span class="heart-icon"><img src="silhueta-de-formato-simples-de-coracao 1.png" alt=""></span>
+        </div>
+
+        <div class="player-controls">
+            <div class="control-buttons">
+                <img src="Component 1.png" alt="">
+            </div>
+            
+        </div>
+
+        <div class="player-extra">
+            
+        </div>
+    </footer>
+<script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,518 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: hidden;
+}
+
+
+.app-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+
+.sidebar {
+    width: 240px;
+    background-color: #0c0b0b;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.nav-principal, .playlists-sec {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.sec-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #a7a7a7;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+}
+
+.menu-item .icon {
+    font-size: 18px;
+    color: #b3b3b3;
+}
+
+.menu-item a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.menu-item:hover a,
+.menu-item:hover .icon {
+    color: #ffffff;
+}
+
+.icon-box {
+    width: 24px;
+    height: 24px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.icon-box.liked {
+    background: linear-gradient(135deg, #450af5, #8e8ee5);
+    color: #ffffff;
+}
+
+.sidebar-divider {
+    height: 1px;
+    background-color: #282828;
+    margin: 8px 0;
+}
+
+.projects-sec h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #e2e8f0;
+}
+
+.projects-sec p {
+    font-size: 14px;
+    color: #a7a7a7;
+}
+
+
+.main-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #121212;
+    overflow-y: auto;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 28px;
+    background-color: #121212;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-arrows {
+    display: flex;
+    gap: 8px;
+}
+
+.arrow-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-filters {
+    display: flex;
+    gap: 8px;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 24px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.filter-btn.active {
+    background-color: #333333;
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 4px 12px 4px 4px;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+#aparecer { 
+   
+position: absolute;
+width: 100%;
+transition: 0.5s;
+background-color: rgb(14, 13, 13);
+top: 100%;
+
+
+}
+
+.aparecer { overflow: hidden;
+height: 0;}
+
+.sumir{
+
+    height: 50vh;
+   
+}
+.aparecer img{
+    object-fit: cover;
+    height: 10vh;
+
+}
+
+
+
+
+.user-profile button {
+    background-color: transparent;
+    border: 2px transparent; 
+    color: #ffffff;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;     
+  }
+  
+  .user-profile:hover {
+    background-color: rgba(0, 0, 0, 0.158)
+      
+  }
+
+.avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;  
+    
+}
+
+
+.arrow-down {
+    font-size: 10px;
+}
+
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 28px 20px 28px;
+}
+
+.content-header h1 {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.recently-played {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #1f1f1f;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #b3b3b3;
+    cursor: pointer;
+}
+
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 20px;
+    padding: 0 28px 40px 28px;
+    align-items: start;
+}
+
+.col-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.card {
+    border-radius: 12px;
+    padding: 20px;
+}
+
+
+.card-purple {
+    background: radial-gradient(circle at center, #6b5ce7 0%, #302682 60%, #1c154f 100%);
+    box-shadow: 0 4px 30px rgba(78, 62, 192, 0.35);
+}
+
+.card-purple h2 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.card-purple p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #f1f2f6;
+    text-align: left;
+}
+
+
+.card-green {
+    background: radial-gradient(circle at center, #0da344 0%, #065e25 60%, #033614 100%);
+    box-shadow: 0 4px 30px rgba(13, 163, 68, 0.35);
+}
+
+.card-green h2 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.card-green form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-green input,
+.card-green textarea {
+    background-color: rgba(0, 0, 0, 0.35);
+    border: none;
+    border-radius: 18px;
+    padding: 12px 18px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    font-family: inherit;
+}
+
+.card-green textarea {
+    height: 110px;
+    border-radius: 14px;
+    resize: none;
+}
+
+.card-green input::placeholder,
+.card-green textarea::placeholder {
+    color: #d1d5db;
+}
+
+
+.card-dark {
+    background-color: #181818;
+    padding: 16px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.card-dark:hover {
+    background-color: #242424;
+}
+
+.card-img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 14px;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.card-dark h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.card-dark .subtext {
+    color: #a7a7a7;
+    font-size: 0.85rem;
+    line-height: 1.35;
+}
+
+
+.player-bar {
+    height: 90px;
+    background-color: #181818;
+    border-top: 1px solid #282828;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    flex-shrink: 0;
+}
+
+.player-track {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 220px;
+}
+
+.track-thumb {
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.track-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.track-info strong {
+    font-size: 14px;
+}
+
+.track-info span {
+    font-size: 12px;
+    color: #a7a7a7;
+}
+
+.heart-icon {
+    color: #1ed760;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+.player-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 40%;
+    max-width: 500px;
+}
+
+.control-buttons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.ctrl-btn {
+    background: none;
+    border: none;
+    color: #b3b3b3;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.ctrl-btn:hover {
+    color: #ffffff;
+}
+
+.play-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.time {
+    font-size: 11px;
+    color: #a7a7a7;
+    min-width: 30px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 4px;
+    background-color: #4d4d4d;
+    border-radius: 2px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.progress-fill {
+    width: 55%;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.progress-bar:hover .progress-fill {
+    background-color: #1ed760;
+}
+
+.player-extra {
+    min-width: 220px;
+}
+.enviar{
+      background-color: #181818;
+    padding: 16px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
